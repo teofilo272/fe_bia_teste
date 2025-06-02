@@ -66,7 +66,7 @@ elif st.session_state.page == 11:
 
 elif st.session_state.page == 12:
     st.subheader("📸 Uma lembrança nossa")
-    st.image("assets/foto_nossa.jpg", caption="Nós ❤️", width=300)
+    st.image("assets/foto_nossa.JPG", caption="Nós ❤️", width=300)
     st.write("“Você é a razão dos meus sorrisos, dos meus sonhos e da minha felicidade. Te amo mais do que as palavras podem expressar.”")
     if st.button("Próxima"):
         next_page()
