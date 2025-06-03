@@ -3,6 +3,12 @@ import streamlit as st
 import qrcode
 from PIL import Image
 import io
+import base64
+
+def get_base64_image(path):
+    with open(path, "rb") as img_file:
+        b64_string = base64.b64encode(img_file.read()).decode()
+    return b64_string
 
 st.set_page_config(page_title="Fe & Bia ❤️", page_icon="❤️", layout="centered")
 
@@ -77,7 +83,23 @@ if st.session_state.page == 0:
         unsafe_allow_html=True
     )
     st.markdown('<div class="centraliza-img">', unsafe_allow_html=True)
-    st.image("assets/coracoes.gif", width=300)
+    if st.session_state.page == 0:
+    st.subheader("Seja bem-vinda ao nosso quiz do amor!")
+
+    img_b64 = get_base64_image("assets/coracoes.gif")
+
+    html_code = f"""
+    <div style="display: flex; justify-content: center;">
+        <img src="data:image/gif;base64,{img_b64}" width="300"/>
+    </div>
+    """
+
+    st.markdown(html_code, unsafe_allow_html=True)
+
+    st.write("Clique no botão abaixo para começar.")
+    if st.button("Começar"):
+        next_page()
+
     st.markdown('</div>', unsafe_allow_html=True)
     st.write("Clique no botão abaixo para começar.")
     if st.button("Começar"):
