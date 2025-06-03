@@ -10,6 +10,27 @@ def get_base64_image(path):
         b64_string = base64.b64encode(img_file.read()).decode()
     return b64_string
 
+st.markdown(
+    """
+    <style>
+    /* Remove margem e padding laterais no container principal */
+    .css-1d391kg {
+        padding-left: 0rem;
+        padding-right: 0rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+
+    /* Opcional: ajustar container para ocupar 100% da largura */
+    .main {
+        max-width: 100% !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 st.set_page_config(page_title="Fe & Bia ❤️", page_icon="❤️", layout="centered")
 
 # CSS para centralizar tudo
