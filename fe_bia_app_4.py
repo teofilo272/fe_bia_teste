@@ -74,17 +74,6 @@ st.markdown(
 
 if st.session_state.page == 0:
     st.subheader("Seja bem-vinda ao nosso quiz do amor!")
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: center;">
-            <img src="assets/coracoes.gif" width="300">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    st.markdown('<div class="centraliza-img">', unsafe_allow_html=True)
-if st.session_state.page == 0:
-    st.subheader("Seja bem-vinda ao nosso quiz do amor!")
 
     img_b64 = get_base64_image("assets/coracoes.gif")
 
