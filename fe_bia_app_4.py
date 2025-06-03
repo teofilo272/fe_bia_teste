@@ -68,7 +68,7 @@ st.markdown(
 
 if st.session_state.page == 0:
     st.subheader("Seja bem-vinda ao nosso quiz do amor!")
-    st.image("imagens/coracoes.png", caption=" ", use_column_width=False)
+    st.image("imagens/coracoes.png")
     st.write("Clique no botão abaixo para começar.")
     if st.button("Começar"):
         next_page()
