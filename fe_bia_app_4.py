@@ -76,6 +76,9 @@ if st.session_state.page == 0:
         """,
         unsafe_allow_html=True
     )
+    st.markdown('<div class="centraliza-img">', unsafe_allow_html=True)
+    st.image("assets/coracoes.gif", width=300)
+    st.markdown('</div>', unsafe_allow_html=True)
     st.write("Clique no botão abaixo para começar.")
     if st.button("Começar"):
         next_page()
