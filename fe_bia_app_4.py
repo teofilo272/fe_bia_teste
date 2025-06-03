@@ -1,4 +1,10 @@
+
 import streamlit as st
+import qrcode
+from PIL import Image
+import io
+
+st.set_page_config(page_title="Fe & Bia ❤️", page_icon="❤️", layout="centered")
 
 # CSS para centralizar tudo
 st.markdown(
@@ -25,13 +31,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-import streamlit as st
-import qrcode
-from PIL import Image
-import io
-
-st.set_page_config(page_title="Fe & Bia ❤️", page_icon="❤️", layout="centered")
 
 def gerar_qrcode(link):
     qr = qrcode.make(link)
