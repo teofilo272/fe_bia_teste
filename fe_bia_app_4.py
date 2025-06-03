@@ -68,12 +68,17 @@ st.markdown(
 
 if st.session_state.page == 0:
     st.subheader("Seja bem-vinda ao nosso quiz do amor!")
-    col1, col2, col3 = st.columns([1, 3, 1])
-    with col2:
-        st.image("assets/coracoes.gif", width=300)
-        st.write("Clique no botão abaixo para começar.")
-        if st.button("Começar"):
-            next_page()
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="assets/coracoes.gif" width="300">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    st.write("Clique no botão abaixo para começar.")
+    if st.button("Começar"):
+        next_page()
 
 elif 1 <= st.session_state.page <= 10:
     idx = st.session_state.page - 1
