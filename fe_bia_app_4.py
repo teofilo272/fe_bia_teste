@@ -9,7 +9,6 @@ def get_base64_image(path):
     with open(path, "rb") as img_file:
         b64_string = base64.b64encode(img_file.read()).decode()
     return b64_string
-
 st.markdown(
     """
     <style>
@@ -29,7 +28,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 
 st.set_page_config(page_title="Fe & Bia ❤️", page_icon="❤️", layout="centered")
 
