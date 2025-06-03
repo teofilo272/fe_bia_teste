@@ -1,30 +1,3 @@
-import streamlit as st
-
-# CSS para centralizar tudo
-st.markdown(
-    """
-    <style>
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .block-container {
-        max-width: 1000px;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 import streamlit as st
 import qrcode
