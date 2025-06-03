@@ -1,62 +1,9 @@
-
 import streamlit as st
 import qrcode
 from PIL import Image
 import io
-import base64
-
-def get_base64_image(path):
-    with open(path, "rb") as img_file:
-        b64_string = base64.b64encode(img_file.read()).decode()
-    return b64_string
 
 st.set_page_config(page_title="Fe & Bia ❤️", page_icon="❤️", layout="centered")
-
-st.markdown(
-    """
-    <style>
-    /* Remove margem e padding laterais no container principal */
-    .css-1d391kg {
-        padding-left: 0rem;
-        padding-right: 0rem;
-        margin-left: 0rem;
-        margin-right: 0rem;
-    }
-
-    /* Opcional: ajustar container para ocupar 100% da largura */
-    .main {
-        max-width: 100% !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# CSS para centralizar tudo
-st.markdown(
-    """
-    <style>
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .block-container {
-        max-width: 1000px;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 def gerar_qrcode(link):
     qr = qrcode.make(link)
@@ -94,22 +41,7 @@ st.markdown(
 
 if st.session_state.page == 0:
     st.subheader("Seja bem-vinda ao nosso quiz do amor!")
-
-    img_b64 = get_base64_image("assets/coracoes.gif")
-
-    html_code = f"""
-    <div style="display: flex; justify-content: center;">
-        <img src="data:image/gif;base64,{img_b64}" width="300"/>
-    </div>
-    """
-
-    st.markdown(html_code, unsafe_allow_html=True)
-
-    st.write("Clique no botão abaixo para começar.")
-    if st.button("Começar"):
-        next_page()
-
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.image("assets/coracoes.gif", width=300)
     st.write("Clique no botão abaixo para começar.")
     if st.button("Começar"):
         next_page()
